@@ -42,7 +42,7 @@ namespace anvil::s
         protected:
             logs_t m_logs;
 
-            void report(const std::string& msg, token_pos pos, log_type type = log_type::ERROR) noexcept {
+            void report(const std::string& msg, token_pos pos = {0, 0}, log_type type = log_type::ERROR) noexcept {
                 m_logs.push_back({type, pos, msg});
             }
     };

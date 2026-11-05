@@ -64,4 +64,8 @@ namespace anvil::s::data
         "x", "[k]", "[x+k]", "M[k]", "#k", "4*([k]&0xf)", "label",
         "#k,Lt,Lf", "x,Lt,Lf", "#k,Lt", "x,Lt", "a", "extension", "no operand"};
 
+    inline constexpr const uint32_t MAX_INSTRUCTION_COUNT = 4096;
+    inline constexpr const uint32_t SC_MEM_SIZE  = 16;
+    inline constexpr const uint32_t SH_MAX_SHIFT = 32;  // max shift for lsh/rsh
+    inline constexpr const int32_t  PKT_DATA_OFF = -0x1000;  // from linux/
 } // namespace anvil

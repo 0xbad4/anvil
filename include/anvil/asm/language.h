@@ -33,4 +33,10 @@ namespace anvil::s {
         Ext = 12,
         None = 13
     };
+
+    // SOCKET_FILTER: the default rules. SECCOMP: also applies the seccomp restrictions.
+    enum class profile : uint8_t {
+        SOCKET_FILTER,
+        SECCOMP
+    };
 }
