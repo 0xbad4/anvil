@@ -2,7 +2,7 @@ CXX      := g++
 CXXFLAGS := -std=c++23 -Wextra -Wall -I../include
 
 
-.PHONY: init clean lexer parser validator
+.PHONY: init clean lexer parser validator optimizer
 
 BIN_DIR := ./bin
 
@@ -18,7 +18,10 @@ parser: init
 validator: init
 	$(CXX) $(CXXFLAGS) ./tests/validator.cpp -lfmt -o $(BIN_DIR)/validator
 
-all: lexer parser validator
+optimizer: init
+	$(CXX) $(CXXFLAGS) ./tests/optimizer.cpp -lfmt -o $(BIN_DIR)/optimizer
+
+all: lexer parser validator optimizer
 
 clean:
 	rm -rf $(BIN_DIR)
